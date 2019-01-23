@@ -1,0 +1,3154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>后台管理</title>
+<link rel="stylesheet" type="text/css" href="administrator_files/index.css">
+<link rel="stylesheet" type="text/css" href="administrator_files/bootstrap.css">
+<script src="administrator_files/jquery.js"></script>
+<script src="administrator_files/gyanliyuan.js"></script>
+<style>
+        .table tbody tr td{
+        vertical-align: middle;
+        }
+        .table tbody tr td{
+        text-align: middle;
+        }
+        .table th, .table td {
+        text-align: center;
+        vertical-align: middle!important;
+        }
+        #leftNave h3{
+        margin-top: 0;
+        background-color: rga(242,242,242);
+        color: white;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 16px;
+        }
+        #banzuwenhua input[type="file"]{
+        display: inline-block;
+        }
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            padding: 0px;}
+        </style>
+</head>
+<body>
+
+<div id="leftNave" style="height: 728px;">
+<h3>
+神木后台管理
+</h3>
+
+<ul>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="9">
+个人信息
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="10">
+公告管理
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="11">
+新闻管理
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="12">
+文件管理
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="13">
+请销假
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="14">
+设备管理
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="15">
+审批管理
+</p>
+<span>
+&gt;
+</span>
+</li>
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="16">
+菜单管理
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="17">
+班前班后会
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="18">
+职工积分
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="19">
+班组文化
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="20">
+安全作业
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="21">
+6S&amp;&amp;TPM
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<img src="administrator_files/hot.png">
+<p id="22">
+合理化建议
+</p>
+<span>
+&gt;
+</span>
+</li>
+
+<li class="Leftnav">
+<a href="http://222.24.63.119/test/"><img src="administrator_files/hot.png">
+<p id="23">
+考试管理
+</p>
+<span>
+&gt;
+</span>
+</a>
+</li>
+
+
+</ul>
+
+
+
+
+</div>
+
+<div id="head">
+<a href="http://222.24.63.119/"><img src="administrator_files/house2.png" id="person" title="进入首页"></a>
+</div>
+<!-- 移动端设置的导航栏 -->
+<ul id="secondNav">
+<li>
+<span class="nav_color">
+个人信息
+</span>
+<span>
+公告管理
+</span>
+<span>
+新闻管理
+</span>
+<span>
+文件管理
+</span>
+</li>
+<li>
+<span>
+请销假
+</span>
+<span>
+设备管理
+</span>
+<span>
+审批管理
+</span>
+<span>
+菜单管理
+</span>
+</li>
+<li>
+<span>
+班前后会
+</span>
+<span>
+职工积分
+</span>
+<span>
+班组文化
+</span>
+<span>
+安全作业
+</span>
+</li>
+<li>
+<span>
+6S&amp;&amp;TPM
+</span>
+<span>
+合理建议
+</span>
+<a href="http://222.24.63.119/test/">
+<span>
+考试管理
+</span></a>
+</li>
+</ul>
+
+<!--个人信息 -->
+<div class="table-box" style="display: block;">
+<div class="table-axtions">
+<p>用户信息</p>
+<hr>
+</div>
+<!-- 对于其中的一些信息搜索 -->
+<form class="well form-search" action=" " method="POST">
+<input type="hidden" name="_xsrf" value="2|cf55762d|1e2a8347abec64b8f1a780fb8ba1aa50|1543031739">
+用户ID: <input type="text" placeholder="请输入用户ID" class="input" name="uid">
+<br>
+关键字: <input type="text" placeholder="用户名/工号/电话" class="input" name="uvalue">
+<br>
+<input type="submit" class="submit">
+<input class="submit clear" value="清空" type="reset">
+</form>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<thead>
+<tr><th>ID</th>
+<th>工号</th>
+<th>用户名</th>
+<th>入职时间</th>
+<th>电话</th>
+<th>状态</th>
+<th>操作</th>
+</tr></thead>
+
+<tbody><tr>
+<td align="center">
+1
+</td>
+<td>
+10001
+</td>
+<td>
+运用员工
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+18888888888
+</td>
+<td>
+
+正常
+
+</td>
+<td class="1">
+    <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+</td>
+
+</tr><tr>
+<td align="center">
+2
+</td>
+<td>
+10002
+</td>
+<td>
+食堂员工
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+12222222222
+</td>
+<td>
+
+正常
+
+</td>
+<td class="2">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+3
+</td>
+<td>
+10003
+</td>
+<td>
+交流员工
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+13333333333
+</td>
+<td>
+
+正常
+
+</td>
+<td class="3">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+4
+</td>
+<td>
+10006
+</td>
+<td>
+备品员工
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+14444444444
+</td>
+<td>
+
+正常
+
+</td>
+<td class="4">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+5
+</td>
+<td>
+10004
+</td>
+<td>
+管理员
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+14444444444
+</td>
+<td>
+
+正常
+
+</td>
+<td class="5">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+6
+</td>
+<td>
+10005
+</td>
+<td>
+是测试
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+14444444444
+</td>
+<td>
+
+正常
+
+</td>
+<td class="6">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+10
+</td>
+<td>
+10010
+</td>
+<td>
+运用组长
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+14444444444
+</td>
+<td>
+
+正常
+
+</td>
+<td class="10">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+11
+</td>
+<td>
+10011
+</td>
+<td>
+食堂组长
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+14444444444
+</td>
+<td>
+
+正常
+
+</td>
+<td class="11">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+12
+</td>
+<td>
+10012
+</td>
+<td>
+交流组长
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+14444444444
+</td>
+<td>
+
+正常
+
+</td>
+<td class="12">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+13
+</td>
+<td>
+10012
+</td>
+<td>
+食堂组员
+</td>
+<td>
+2018-10-04
+</td>
+<td>
+14444444444
+</td>
+<td>
+
+正常
+
+</td>
+<td class="13">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+106
+</td>
+<td>
+2000
+</td>
+<td>
+丁建峰
+</td>
+<td>
+None
+</td>
+<td>
+13636841516
+</td>
+<td>
+
+正常
+
+</td>
+<td class="106">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+107
+</td>
+<td>
+2001
+</td>
+<td>
+路俊彪
+</td>
+<td>
+None
+</td>
+<td>
+15909240019
+</td>
+<td>
+
+正常
+
+</td>
+<td class="107">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+108
+</td>
+<td>
+2002
+</td>
+<td>
+刘婷
+</td>
+<td>
+None
+</td>
+<td>
+13571281089
+</td>
+<td>
+
+正常
+
+</td>
+<td class="108">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+109
+</td>
+<td>
+2003
+</td>
+<td>
+胥婷婷
+</td>
+<td>
+None
+</td>
+<td>
+15991220807
+</td>
+<td>
+
+正常
+
+</td>
+<td class="109">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+110
+</td>
+<td>
+2004
+</td>
+<td>
+伊志文
+</td>
+<td>
+None
+</td>
+<td>
+13572657011
+</td>
+<td>
+
+正常
+
+</td>
+<td class="110">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+111
+</td>
+<td>
+2005
+</td>
+<td>
+李莎
+</td>
+<td>
+None
+</td>
+<td>
+18291257997
+</td>
+<td>
+
+正常
+
+</td>
+<td class="111">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+112
+</td>
+<td>
+2006
+</td>
+<td>
+冯雅兰
+</td>
+<td>
+None
+</td>
+<td>
+15353481307
+</td>
+<td>
+
+正常
+
+</td>
+<td class="112">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+113
+</td>
+<td>
+2007
+</td>
+<td>
+马婷
+</td>
+<td>
+None
+</td>
+<td>
+13772368315
+</td>
+<td>
+
+正常
+
+</td>
+<td class="113">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+114
+</td>
+<td>
+2008
+</td>
+<td>
+赵俊
+</td>
+<td>
+None
+</td>
+<td>
+13891254329
+</td>
+<td>
+
+正常
+
+</td>
+<td class="114">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+115
+</td>
+<td>
+2009
+</td>
+<td>
+刘海艳
+</td>
+<td>
+None
+</td>
+<td>
+13772307051
+</td>
+<td>
+
+正常
+
+</td>
+<td class="115">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+116
+</td>
+<td>
+2010
+</td>
+<td>
+李婷
+</td>
+<td>
+None
+</td>
+<td>
+18329268092
+</td>
+<td>
+
+正常
+
+</td>
+<td class="116">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+117
+</td>
+<td>
+2011
+</td>
+<td>
+武张杨
+</td>
+<td>
+None
+</td>
+<td>
+15009126501
+</td>
+<td>
+
+正常
+
+</td>
+<td class="117">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+118
+</td>
+<td>
+2012
+</td>
+<td>
+刘仙飞
+</td>
+<td>
+None
+</td>
+<td>
+18791210159
+</td>
+<td>
+
+正常
+
+</td>
+<td class="118">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+119
+</td>
+<td>
+2013
+</td>
+<td>
+郭少卿
+</td>
+<td>
+None
+</td>
+<td>
+18191281122
+</td>
+<td>
+
+正常
+
+</td>
+<td class="119">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+120
+</td>
+<td>
+2014
+</td>
+<td>
+邱会
+</td>
+<td>
+None
+</td>
+<td>
+17792175328
+</td>
+<td>
+
+正常
+
+</td>
+<td class="120">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+121
+</td>
+<td>
+2015
+</td>
+<td>
+张小霞
+</td>
+<td>
+None
+</td>
+<td>
+18891201840
+</td>
+<td>
+
+正常
+
+</td>
+<td class="121">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+122
+</td>
+<td>
+2016
+</td>
+<td>
+贺波
+</td>
+<td>
+None
+</td>
+<td>
+13809129280
+</td>
+<td>
+
+正常
+
+</td>
+<td class="122">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+123
+</td>
+<td>
+2017
+</td>
+<td>
+马银萍
+</td>
+<td>
+None
+</td>
+<td>
+13659225406
+</td>
+<td>
+
+正常
+
+</td>
+<td class="123">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+124
+</td>
+<td>
+2018
+</td>
+<td>
+刘倩
+</td>
+<td>
+None
+</td>
+<td>
+18681923115
+</td>
+<td>
+
+正常
+
+</td>
+<td class="124">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+125
+</td>
+<td>
+2019
+</td>
+<td>
+杨倩
+</td>
+<td>
+None
+</td>
+<td>
+17719659599
+</td>
+<td>
+
+正常
+
+</td>
+<td class="125">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr><tr>
+<td align="center">
+126
+</td>
+<td>
+2020
+</td>
+<td>
+卜帅帅
+</td>
+<td>
+None
+</td>
+<td>
+15291883441
+</td>
+<td>
+
+正常
+
+</td>
+<td class="126">
+        <button type="button" class="btn btn-warning">拉黑</button>|<button type="button" class="btn btn-success">启用</button>
+    </td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- 公告管理 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>公告管理</p>
+<hr>
+</div>
+<div class="table-axtions">
+<button class="manage gongGao" style="background-color: #1DCCAA;">管理</button>
+<button class="add gongGao" style="background-color: #F4A425;">添加</button>
+</div>
+<form class="js-ajax-form gongGaoBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<th>
+</th>
+<th>ID</th>
+<th>公告标题</th>
+<th>公告内容</th>
+<th>作者</th>
+<th>上传时间</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+<td>1</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+<td>2</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+<td>3</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+<td>4</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+<!-- 其中的添加文章的部分-->
+<form class="gongGaoBox">
+                <div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<td class="bold">
+分类
+</td>
+<td>
+<input type="text1" class="input gongGaoInput">
+</td>
+</tr>
+<tr>
+<td class="bold">
+标题
+</td>
+<td>
+<input type="text2" class="input gongGaoInput">
+</td>
+</tr>
+<tr>
+<td class="bold">
+关键字
+</td>
+<td>
+<input type="text3" class="input gongGaoInput">
+</td>
+</tr>
+<tr>
+<td class="bold">
+内容
+</td>
+<td>
+<textarea name="text4" rows="10" cols="38"></textarea>
+</td>
+</tr>
+<tr>
+<td class="bold">
+公告作者
+</td>
+<td>
+<input type="text5" class="input gongGaoInput">
+</td>
+</tr>
+<tr>
+<td class="bold">
+上传文件
+</td>
+<td>
+<input name="text6" type="file" class="gongGaoFile">
+</td>
+</tr>
+</tbody></table>
+<input type="button" class="tiJiao" onclick="check(event)" value="提交">
+
+<script type="text/javascript">
+CKEDITOR.replace('opinion',{
+height:300
+})
+function check(event) {
+event.preventDefault;
+var that=this
+var text=CKEDITOR.instances.opinion.getData();//获取编辑区的html
+var url=".......do?method=...";
+var input = document.querySelectorAll(".gongGaoInput");
+var formData=new FormData();
+formData.append("fenLei",input[0].value);
+formData.append("title",input[1].value);
+formData.append("meta",input[2].value);
+formData.append("text",text);
+formData.append("author",input[3].value);
+formData.append("file",getFile(event,'.gongGaoFile'));
+jQuery.ajax( {
+url : url,
+data:formData,
+type : "post",
+success : function(data) {
+alert("保存成功了")
+},
+error : function(xhr, type, errorThrown) {
+alert("网络错误！")
+}
+})
+}
+</script>
+</div>
+</form>
+</div>
+<!-- 新闻管理 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>新闻管理</p>
+<hr>
+</div>
+<div class="table-axtions">
+<button class="manage new" style="background-color: #1DCCAA;">管理</button>
+<button class="add new" style="background-color: #F4A425;">添加</button>
+</div>
+<form class="js-ajax-form newBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<th>
+</th>
+<th>ID</th>
+<th>新闻标题</th>
+<th>新闻内容</th>
+<th>作者</th>
+<th>上传时间</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+<td>1</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+<td>2</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+<td>3</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+<td>4</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+<!-- 其中的添加新闻文章的部分-->
+<form class="newBox">
+                <div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<td class="bold">
+分类
+</td>
+<td>
+<input type="text1" class="input newInput">
+</td>
+</tr>
+<tr>
+<td class="bold">
+标题
+</td>
+<td>
+<input type="text2" class="input newInput">
+</td>
+</tr>
+<tr>
+<td class="bold">
+关键字
+</td>
+<td>
+<input type="text3" class="input newInput">
+</td>
+</tr>
+<tr>
+<td class="bold">
+内容
+</td>
+<td>
+<textarea name="text4" id="opinion2" rows="10" cols="38"></textarea>
+</td>
+</tr>
+<tr>
+<td class="bold">
+新闻作者
+</td>
+<td>
+<input type="text5" class="input newInput">
+</td>
+</tr>
+<tr>
+<td class="bold">
+上传文件
+</td>
+<td>
+<input name="text6" type="file" class="newsFile">
+</td>
+</tr>
+</tbody></table>
+<input type="button" class="tiJiao" value="提交" onclick="check2(event)">
+<script type="text/javascript">
+CKEDITOR.replace('opinion2',{
+height:300
+})
+function check2() {
+event.preventDefault;
+var that=this
+var text=CKEDITOR.instances.opinion.getData();//获取编辑区的html
+var url=".......do?method=...";
+var input = document.querySelectorAll(".newInput");
+var formData=new FormData();
+formData.append("fenLei",input[0].value);
+formData.append("title",input[1].value);
+formData.append("meta",input[2].value);
+formData.append("text",text);
+formData.append("author",input[3].value);
+formData.append("file",getFile(event,'.gongGaoFile'));
+jQuery.ajax( {
+url : url,
+data:formData,
+type : "post",
+success : function(data) {
+alert("保存成功了")
+},
+error : function(xhr, type, errorThrown) {
+alert("网络错误！")
+}
+})
+}
+</script>
+</div>
+</form>
+</div>
+<!-- 文件管理 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>文件管理</p>
+<hr>
+</div>
+<div class="table-axtions">
+<button class="manage file" style="background-color: #1DCCAA;">管理</button>
+<button class="add file" style="background-color: #F4A425;">添加</button>
+</div>
+<form class="js-ajax-form fileBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<td>
+</td>
+<td>ID</td>
+<td>文件标题</td>
+<td>文件内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td>状态</td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+<td>1</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+<td>2</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+<td>3</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+<td>4</td>
+<td>标题</td>
+<td>内容</td>
+<td>作者</td>
+<td>上传时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+<!-- 其中的添加文件的部分-->
+<form class="fileBox">
+                <div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<td class="bold">
+分类
+</td>
+<td>
+<input type="text1" class="input">
+</td>
+</tr>
+<tr>
+<td class="bold">
+标题
+</td>
+<td>
+<input type="text2" class="input">
+</td>
+</tr>
+<tr>
+<td class="bold">
+关键字
+</td>
+<td>
+<input type="text3" class="input">
+</td>
+</tr>
+<tr>
+<td class="bold">
+文件作者
+</td>
+<td>
+<input type="text4" class="input">
+</td>
+</tr>
+<tr>
+<td class="bold">
+上传文件
+</td>
+<td>
+<input name="text5" type="file" class="wenJian">
+</td>
+</tr>
+</tbody></table>
+<input type="button" class="tiJiao" value="提交" onclick="check3(event)">
+</div>
+</form>
+<script type="text/javascript">
+function check3() {
+event.preventDefault;
+var that=this
+var url=".......do?method=...";
+var input = document.querySelectorAll(".newInput");
+var formData=new FormData();
+formData.append("fenLei",input[0].value);
+formData.append("title",input[1].value);
+formData.append("meta",input[2].value);
+formData.append("author",input[3].value);
+formData.append("file",getFile(event,'.gongGaoFile'));
+jQuery.ajax( {
+url : url,
+data:formData,
+type : "post",
+success : function(data) {
+alert("保存成功了")
+},
+error : function(xhr, type, errorThrown) {
+alert("网络错误！")
+}
+})
+}
+</script>
+</div>
+<!-- 请销假 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>请销假</p>
+<hr>
+</div>
+<form class="js-ajax-form">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<th>
+</th>
+<th>ID</th>
+<th>姓名</th>
+<th>邮箱</th>
+<th>请假原因</th>
+<th>请假时间</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+<td>1</td>
+<td>姓名</td>
+<td>邮箱</td>
+<td>请假原因</td>
+<td>请假时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+<td>2</td>
+<td>姓名</td>
+<td>邮箱</td>
+<td>请假原因</td>
+<td>请假时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+<td>3</td>
+<td>姓名</td>
+<td>邮箱</td>
+<td>请假原因</td>
+<td>请假时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+<td>4</td>
+<td>姓名</td>
+<td>邮箱</td>
+<td>请假原因</td>
+<td>请假时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+</div>
+<!-- 设备管理 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>设备管理</p>
+<hr>
+</div>
+<div class="table-axtions">
+<button class="manage shebei" style="background-color: #1DCCAA;">管理</button>
+<button class="add shebei" style="background-color: #F4A425;">添加</button>
+</div>
+<form class="js-ajax-form shebeiBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<th>
+</th>
+<th>ID</th>
+<th>设备名称</th>
+<th>说明</th>
+<th>管理员</th>
+<th>时间</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+<td>1</td>
+<td>设备名称</td>
+<td>说明</td>
+<td>管理员</td>
+<td>时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+<td>2</td>
+<td>设备名称</td>
+<td>说明</td>
+<td>管理员</td>
+<td>时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+<td>3</td>
+<td>设备名称</td>
+<td>说明</td>
+<td>管理员</td>
+<td>时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+<td>4</td>
+<td>设备名称</td>
+<td>说明</td>
+<td>管理员</td>
+<td>时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+<!-- //设备的添加 -->
+<form class="shebeiBox" id="shebeitianjiamain">
+                <div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+        <table class="table table-hover table-striped table-bordered">
+        <tbody><tr>
+        <td class="bold">
+        设备分类
+        </td>
+        <td>
+        <input type="text1" class="input" name="fenlei">
+        </td>
+        </tr>
+        <tr>
+        <td class="bold">
+        设备标题
+        </td>
+        <td>
+        <input name="text2" type="text" class="input">
+        </td>
+        </tr>
+        <tr>
+        <td class="bold">
+        关键字
+        </td>
+        <td>
+        <input name="text3" type="text" class="input">
+        </td>
+        </tr>
+        <tr>
+        <td class="bold">
+        设备作者
+        </td>
+        <td>
+        <input name="text4" type="text" class="input">
+        </td>
+        </tr>
+        <tr>
+        <td class="bold">
+        上传文件
+        </td>
+        <td>
+        <input name="text5" type="file" class="wenJian">
+        </td>
+        </tr>
+        </tbody></table>
+        <input type="button" class="tiJiao" value="提交" id="shebeitianjia">
+        </div>
+        </form>
+</div>
+<!-- 审批管理 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>审批管理</p>
+<hr>
+</div>
+<form class="js-ajax-form">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<th>
+</th>
+<th>ID</th>
+<th>姓名</th>
+<th>邮箱</th>
+<th>请假原因</th>
+<th>请假时间</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+<td>1</td>
+<td>姓名</td>
+<td>邮箱</td>
+<td>请假原因</td>
+<td>请假时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+<td>2</td>
+<td>姓名</td>
+<td>邮箱</td>
+<td>请假原因</td>
+<td>请假时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+<td>3</td>
+<td>姓名</td>
+<td>邮箱</td>
+<td>请假原因</td>
+<td>请假时间</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+<td>4</td>
+<td>姓名</td>
+<td>邮箱</td>
+<td>请假原因</td>
+<td>请假时间</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+</div>
+<!-- 菜单管理 -->
+<div class="table-box" id="menuAd" style="display: none;">
+<div class="table-axtions">
+<p>菜单管理</p>
+<hr>
+</div>
+<input type="button" value="菜单管理" class="active menuBtn" id="adBtn">
+<input type="button" value="添加菜单" class="menuBtn">
+<input type="button" value="编辑" class="menuBtn" id="editbtn" style="display:none">
+<div class="menuContent" style="display:block">
+        <div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody>
+<tr>
+    <th>ID</th>
+<th>菜单名称</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>chris</td>
+<td>显示</td>
+<td><div class="1">
+        <button type="button" class="btn btn-primary">修改</button>
+        <button type="button" class="btn btn-danger">删除</button></div></td>
+</tr>
+<tr>
+<td>2</td>
+<td>科比</td>
+<td>显示</td>
+<td><div class="2">
+        <button type="button" class="btn btn-primary">修改</button>
+        <button type="button" class="btn btn-danger">删除</button></div></td>
+</tr>
+<tr>
+
+<td>3</td>
+<td>勒布朗</td>
+<td>显示</td>
+<td><div class="3">
+        <button type="button" class="btn btn-primary">修改</button>
+        <button type="button" class="btn btn-danger">删除</button></div></td>
+</tr>
+<tr>
+<td>4</td>
+<td>乔治</td>
+<td>显示</td>
+<td><div class="4">
+        <button type="button" class="btn btn-primary">修改</button>
+        <button type="button" class="btn btn-danger">删除</button></div></td>
+</tr>
+<tr>
+<td>5</td>
+<td>戴维斯</td>
+<td>显示</td>
+<td><div class="5">
+        <button type="button" class="btn btn-primary">修改</button>
+        <button type="button" class="btn btn-danger">删除</button></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="menuContent">
+<form action="" id="addMenu" class="addmenu2">
+<label for="">父级: </label>
+<select name="parentid" class="valid" aria-invalid="false">
+<option value="0" selected="selected">/</option>
+<option value="5">班组文化</option>
+<option value="6">&nbsp;&nbsp;├─ 班组简介</option>
+<option value="7">&nbsp;&nbsp;├─ 组织机构</option>
+<option value="20">&nbsp;&nbsp;├─ 人员信息</option>
+<option value="21">&nbsp;&nbsp;└─ 员工风采</option>
+<option value="8">班务公开</option>
+<option value="9">&nbsp;&nbsp;├─ 计件统计</option>
+<option value="10">&nbsp;&nbsp;├─ 个人积分</option>
+<option value="11">&nbsp;&nbsp;└─ 考核奖励</option>
+<option value="12">日常管理</option>
+<option value="22">&nbsp;&nbsp;├─ 考勤记录</option>
+<option value="23">&nbsp;&nbsp;├─ 班前班后会</option>
+<option value="24">&nbsp;&nbsp;└─ 电子审批</option>
+<option value="13">学习园地</option>
+<option value="25">&nbsp;&nbsp;├─ 学习记录</option>
+<option value="26">&nbsp;&nbsp;├─ 职工考试</option>
+<option value="27">&nbsp;&nbsp;└─ 学习资料</option>
+<option value="42">&nbsp;&nbsp;&nbsp;└─ 法律法规</option>
+<option value="14">安全管理</option>
+<option value="16">&nbsp;&nbsp;├─ 安全例会</option>
+<option value="28">&nbsp;&nbsp;└─ 风险预控</option>
+<option value="15">质量管理</option>
+<option value="29">&nbsp;&nbsp;├─ 质量互控</option>
+<option value="30">&nbsp;&nbsp;├─ 质量分析</option>
+<option value="31">&nbsp;&nbsp;├─ 质量预控</option>
+<option value="32">&nbsp;&nbsp;├─ 6S</option>
+<option value="33">&nbsp;&nbsp;├─ TPM</option>
+<option value="34">&nbsp;&nbsp;└─ 电子台账</option>
+<option value="19">科技创新</option>
+<option value="35">&nbsp;&nbsp;├─ 意见建议</option>
+<option value="36">&nbsp;&nbsp;├─ 五小攻关</option>
+<option value="37">&nbsp;&nbsp;├─ 改善提案</option>
+<option value="38">&nbsp;&nbsp;├─ QCC活动</option>
+<option value="39">&nbsp;&nbsp;├─ 创新计划</option>
+<option value="40">&nbsp;&nbsp;├─ 课题研究</option>
+<option value="41">&nbsp;&nbsp;└─ 成果展示</option>
+</select>
+<br>
+<label for="">标签: </label>
+<input type="text1" name="" id="tagName">
+<br>
+<label for="">链接: </label>
+<input type="radio" name="nav" id="outlink_radio" checked="checked">
+<input type="text2" id="outlink_input" value="http://" class="valid" aria-invalid="false">
+<label for="" class="caidanyingchanglabel"></label>
+<input type="radio" name="href" id="selecturl_radio" checked="checked">
+<select id="selecthref" name="text3" class="valid" aria-invalid="false">
+<option value="aG9tZQ==" selected="selected">首页</option>
+<optgroup label="文章分类">
+<option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoxOiI2Ijt9fQ==">班组文化</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoxOiI3Ijt9fQ==">&nbsp;&nbsp;├─ 班组简介</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoxOiI4Ijt9fQ==">&nbsp;&nbsp;├─ 组织机构</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxOSI7fX0=">&nbsp;&nbsp;├─ 人员信息</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyMCI7fX0=">&nbsp;&nbsp;└─ 员工风采</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoxOiI5Ijt9fQ==">班务公开</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxMCI7fX0=">&nbsp;&nbsp;├─ 计件统计</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxMSI7fX0=">&nbsp;&nbsp;├─ 个人积分</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxMiI7fX0=">&nbsp;&nbsp;└─ 考核奖励</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxMyI7fX0=">日常管理</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyMSI7fX0=">&nbsp;&nbsp;├─ 考勤记录</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyMiI7fX0=">&nbsp;&nbsp;├─ 班前班后会</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyMyI7fX0=">&nbsp;&nbsp;└─ 电子审批</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxNCI7fX0=">安全管理</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyNyI7fX0=">&nbsp;&nbsp;├─ 风险预控</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyOCI7fX0=">&nbsp;&nbsp;└─ 安全例会</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxNSI7fX0=">质量管理</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxNyI7fX0=">&nbsp;&nbsp;├─ 质量互控</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyOSI7fX0=">&nbsp;&nbsp;├─ 质量分析</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzMCI7fX0=">&nbsp;&nbsp;├─ 质量预控</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzMSI7fX0=">&nbsp;&nbsp;├─ 6S</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzMiI7fX0=">&nbsp;&nbsp;├─ TPM</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzMyI7fX0=">&nbsp;&nbsp;└─ 电子台账</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxNiI7fX0=">学习园地</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyNCI7fX0=">&nbsp;&nbsp;├─ 学习记录</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyNSI7fX0=">&nbsp;&nbsp;├─ 职工考试</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyNiI7fX0=">&nbsp;&nbsp;└─ 学习资料</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0MyI7fX0=">&nbsp;&nbsp;&nbsp;├─ 法律法规</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0NCI7fX0=">&nbsp;&nbsp;&nbsp;├─ 规章制度</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0NSI7fX0=">&nbsp;&nbsp;&nbsp;├─ 上级发文</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0NiI7fX0=">&nbsp;&nbsp;&nbsp;├─ OPL课程</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0NyI7fX0=">&nbsp;&nbsp;&nbsp;├─ 学习视频</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0OCI7fX0=">&nbsp;&nbsp;&nbsp;├─ 作业手册</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0OSI7fX0=">&nbsp;&nbsp;&nbsp;├─ 专业教材</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI1MCI7fX0=">&nbsp;&nbsp;&nbsp;└─ 案例汇编</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzNCI7fX0=">材料管理</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzNSI7fX0=">科技创新</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzNiI7fX0=">&nbsp;&nbsp;├─ 意见建议</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzNyI7fX0=">&nbsp;&nbsp;├─ 五小攻关</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzOCI7fX0=">&nbsp;&nbsp;├─ 改善提案</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzOSI7fX0=">&nbsp;&nbsp;├─ QCC活动</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0MCI7fX0=">&nbsp;&nbsp;├─ 创新计划</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0MSI7fX0=">&nbsp;&nbsp;├─ 课题研究</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0MiI7fX0=">&nbsp;&nbsp;└─ 成果展示</option> </optgroup><optgroup label="页面">
+</optgroup> </select><br>
+<label for="">打开方式: </label>
+<select name="target">
+<option value="" selected="selected">默认</option>
+<option value="_blank">新窗口打开</option>
+</select>
+<br>
+<label for="">状态: </label>
+<select name="status" class="valid" aria-invalid="false" id="status">
+<option value="1" selected="selected">显示</option>
+<option value="0">隐藏</option>
+</select>
+<br>
+<label for="" class="caidanyingchanglabel"></label>
+<input type="button" value="添加" class="addBtn caidanbaocun_btn" id="addBtn">
+<input type="button" value="返回" class="goBack">
+</form>
+</div>
+<div class="menuContent">
+<form action="" id="addMenu" class="addmenu2">
+<label for="">父级: </label>
+<select name="parentid" class="valid" aria-invalid="false">
+<option value="0" selected="selected">/</option>
+<option value="5">班组文化</option>
+<option value="6">&nbsp;&nbsp;├─ 班组简介</option>
+<option value="7">&nbsp;&nbsp;├─ 组织机构</option>
+<option value="20">&nbsp;&nbsp;├─ 人员信息</option>
+<option value="21">&nbsp;&nbsp;└─ 员工风采</option>
+<option value="8">班务公开</option>
+<option value="9">&nbsp;&nbsp;├─ 计件统计</option>
+<option value="10">&nbsp;&nbsp;├─ 个人积分</option>
+<option value="11">&nbsp;&nbsp;└─ 考核奖励</option>
+<option value="12">日常管理</option>
+<option value="22">&nbsp;&nbsp;├─ 考勤记录</option>
+<option value="23">&nbsp;&nbsp;├─ 班前班后会</option>
+<option value="24">&nbsp;&nbsp;└─ 电子审批</option>
+<option value="13">学习园地</option>
+<option value="25">&nbsp;&nbsp;├─ 学习记录</option>
+<option value="26">&nbsp;&nbsp;├─ 职工考试</option>
+<option value="27">&nbsp;&nbsp;└─ 学习资料</option>
+<option value="42">&nbsp;&nbsp;&nbsp;└─ 法律法规</option>
+<option value="14">安全管理</option>
+<option value="16">&nbsp;&nbsp;├─ 安全例会</option>
+<option value="28">&nbsp;&nbsp;└─ 风险预控</option>
+<option value="15">质量管理</option>
+<option value="29">&nbsp;&nbsp;├─ 质量互控</option>
+<option value="30">&nbsp;&nbsp;├─ 质量分析</option>
+<option value="31">&nbsp;&nbsp;├─ 质量预控</option>
+<option value="32">&nbsp;&nbsp;├─ 6S</option>
+<option value="33">&nbsp;&nbsp;├─ TPM</option>
+<option value="34">&nbsp;&nbsp;└─ 电子台账</option>
+<option value="19">科技创新</option>
+<option value="35">&nbsp;&nbsp;├─ 意见建议</option>
+<option value="36">&nbsp;&nbsp;├─ 五小攻关</option>
+<option value="37">&nbsp;&nbsp;├─ 改善提案</option>
+<option value="38">&nbsp;&nbsp;├─ QCC活动</option>
+<option value="39">&nbsp;&nbsp;├─ 创新计划</option>
+<option value="40">&nbsp;&nbsp;├─ 课题研究</option>
+<option value="41">&nbsp;&nbsp;└─ 成果展示</option>
+</select>
+<br>
+<label for="">标签: </label>
+<input type="text" name="" id="">
+<br>
+<label for="">链接: </label>
+<input type="radio" name="nav" id="outlink_radio" checked="checked">
+<input type="text" id="outlink_input" value="http://" class="valid" aria-invalid="false">
+<input type="radio" name="href" id="selecturl_radio" checked="checked">
+<select id="selecthref" name="href" class="valid" aria-invalid="false">
+<option value="aG9tZQ==" selected="selected">首页</option>
+<optgroup label="文章分类">
+<option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoxOiI2Ijt9fQ==">班组文化</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoxOiI3Ijt9fQ==">&nbsp;&nbsp;├─ 班组简介</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoxOiI4Ijt9fQ==">&nbsp;&nbsp;├─ 组织机构</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxOSI7fX0=">&nbsp;&nbsp;├─ 人员信息</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyMCI7fX0=">&nbsp;&nbsp;└─ 员工风采</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoxOiI5Ijt9fQ==">班务公开</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxMCI7fX0=">&nbsp;&nbsp;├─ 计件统计</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxMSI7fX0=">&nbsp;&nbsp;├─ 个人积分</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxMiI7fX0=">&nbsp;&nbsp;└─ 考核奖励</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxMyI7fX0=">日常管理</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyMSI7fX0=">&nbsp;&nbsp;├─ 考勤记录</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyMiI7fX0=">&nbsp;&nbsp;├─ 班前班后会</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyMyI7fX0=">&nbsp;&nbsp;└─ 电子审批</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxNCI7fX0=">安全管理</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyNyI7fX0=">&nbsp;&nbsp;├─ 风险预控</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyOCI7fX0=">&nbsp;&nbsp;└─ 安全例会</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxNSI7fX0=">质量管理</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxNyI7fX0=">&nbsp;&nbsp;├─ 质量互控</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyOSI7fX0=">&nbsp;&nbsp;├─ 质量分析</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzMCI7fX0=">&nbsp;&nbsp;├─ 质量预控</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzMSI7fX0=">&nbsp;&nbsp;├─ 6S</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzMiI7fX0=">&nbsp;&nbsp;├─ TPM</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzMyI7fX0=">&nbsp;&nbsp;└─ 电子台账</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIxNiI7fX0=">学习园地</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyNCI7fX0=">&nbsp;&nbsp;├─ 学习记录</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyNSI7fX0=">&nbsp;&nbsp;├─ 职工考试</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIyNiI7fX0=">&nbsp;&nbsp;└─ 学习资料</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0MyI7fX0=">&nbsp;&nbsp;&nbsp;├─ 法律法规</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0NCI7fX0=">&nbsp;&nbsp;&nbsp;├─ 规章制度</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0NSI7fX0=">&nbsp;&nbsp;&nbsp;├─ 上级发文</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0NiI7fX0=">&nbsp;&nbsp;&nbsp;├─ OPL课程</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0NyI7fX0=">&nbsp;&nbsp;&nbsp;├─ 学习视频</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0OCI7fX0=">&nbsp;&nbsp;&nbsp;├─ 作业手册</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0OSI7fX0=">&nbsp;&nbsp;&nbsp;├─ 专业教材</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI1MCI7fX0=">&nbsp;&nbsp;&nbsp;└─ 案例汇编</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzNCI7fX0=">材料管理</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzNSI7fX0=">科技创新</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzNiI7fX0=">&nbsp;&nbsp;├─ 意见建议</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzNyI7fX0=">&nbsp;&nbsp;├─ 五小攻关</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzOCI7fX0=">&nbsp;&nbsp;├─ 改善提案</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiIzOSI7fX0=">&nbsp;&nbsp;├─ QCC活动</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0MCI7fX0=">&nbsp;&nbsp;├─ 创新计划</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0MSI7fX0=">&nbsp;&nbsp;├─ 课题研究</option><option value="YToyOntzOjY6ImFjdGlvbiI7czoxNzoiUG9ydGFsL0xpc3QvaW5kZXgiO3M6NToicGFyYW0iO2E6MTp7czoyOiJpZCI7czoyOiI0MiI7fX0=">&nbsp;&nbsp;└─ 成果展示</option> </optgroup><optgroup label="页面">
+</optgroup> </select><br>
+<label for="">打开方式: </label>
+<select name="target">
+<option value="" selected="selected">默认</option>
+<option value="_blank">新窗口打开</option>
+</select>
+<br>
+<label for="">状态: </label>
+<select name="status" class="valid" aria-invalid="false">
+<option value="1" selected="selected">显示</option>
+<option value="0">隐藏</option>
+</select>
+<br>
+<input type="button" value="保存" class="saveBtn ">
+<input type="button" value="返回" class="goBack">
+</form>
+</div>
+</div>
+
+
+
+
+<!-- 班前班后会 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>班前班后会</p>
+<hr>
+</div>
+<div class="table-axtions">
+<button class="manage banqian" style="background-color: #1DCCAA;">管理</button>
+<button class="add banqian" style="background-color: #F4A425;">添加</button>
+</div>
+<form class="js-ajax-form banqianBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<th>
+</th>
+<th>序号</th>
+<th>会议名称</th>
+
+<th>出勤人数</th>
+<th>发布人</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+<td>1</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+<td>2</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+<td>3</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+<td>4</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+<!-- 其中的添加班会的部分-->
+<form class="banqianBox">
+                <div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="meetingTable table table-hover table-striped table-bordered">
+<input type="hidden" name="formname1" value="3">
+        <input type="hidden" name="formname2" value="9">
+        <input type="hidden" name="formname3" value="0">
+<tbody><tr><th>应出勤人数</th>
+<th>实际出勤人数</th>
+<th>请假</th>
+<th>调休</th>
+<th>备注</th>
+</tr>
+</tbody><tbody><tr class="numberP">
+<td style="width:150;height:50px">21</td>
+<td><input class="chuqinrenshu" type="text" name="text0" style="width:100%;height:50px"></td>
+<td><input type="text" name="text1" style="width:100%;height:50px"></td>
+<td><input type="text" name="text2" style="width:100%;height:50px"></td>
+<td><input type="text" name="text3" style="width:100%;height:50px"></td>
+</tr>
+<tr class="summary">
+<th>班前传达学习以及安全预想</th>
+<td colspan="4"><textarea type="text" name="text4" style="width:100%;height:100px"></textarea></td>
+</tr>
+<tr class="summary">
+<th>本班作业中生产任务以及作业情况</th>
+<td colspan="4"><textarea type="text" name="text5" style="width:100%;height:100px"></textarea></td>
+</tr>
+<tr class="summary">
+<th>班后总结</th>
+<td colspan="4"><textarea type="text" name="text6" style="width:100%;height:100px"></textarea></td>
+</tr>
+</tbody></table>
+<br>
+<div id="" style="text-align:center;margin-bottom: 10px;background: rgb(245,245,245)">
+        <button type="submit" class="btn btn-primary" onclick="banAdd()">提交</button>
+</div>
+<br>
+</div>
+</form>
+</div>
+
+<!-- 职工积分 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>职工积分</p>
+<hr>
+</div>
+<form class="js-ajax-form zhigongBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+        <input type="hidden" value="职工积分">
+                <h4 class="zhigong_label_shang"><span id="jifenluru"><label for=""> 请选择录入类型：</label><select name="text1">
+                                <option value="1" selected="selected">计件统计</option>
+                                <option value="2">积分统计</option>
+                                <option value="3">考核奖励</option>
+                        </select> </span>
+                <span id="jifenshijian"><label for=""> 时间选择：</label><input type="date" name="text2"> </span>
+                </h4>
+<table class="table table-hover table-striped table-bordered" style="text-align:center" id="jiden_juzhong">
+<tbody>
+<tr id="thead">
+<th> 姓 名 </th>
+<th>个人分值汇总</th>
+<th>分值</th>
+</tr>
+
+<tr>
+<td>丁建峰</td>
+<td>55</td>
+<td><input type="text3" name="106" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>路俊彪</td>
+<td>50</td>
+<td><input type="text4" name="107" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>刘婷</td>
+<td>40</td>
+<td><input type="text5" name="108" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>胥婷婷</td>
+<td>46</td>
+<td><input type="text6" name="109" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>伊志文</td>
+<td>43</td>
+<td><input type="text7" name="110" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>李莎</td>
+<td>47</td>
+<td><input type="text8" name="111" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>冯雅兰</td>
+<td>39</td>
+<td><input type="text9" name="112" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>马婷</td>
+<td>45</td>
+<td><input type="text10" name="113" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>赵俊</td>
+<td>38</td>
+<td><input type="text11" name="114" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>刘海艳</td>
+<td>36</td>
+<td><input type="text12" name="115" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>李婷</td>
+<td>36</td>
+<td><input type="text13" name="116" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>武张杨</td>
+<td>38</td>
+<td><input type="text14" name="117" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>刘仙飞</td>
+<td>34</td>
+<td><input type="text15" name="118" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>郭少卿</td>
+<td>42</td>
+<td><input type="text16" name="119" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>邱会</td>
+<td>40</td>
+<td><input type="text17" name="120" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>张小霞</td>
+<td>48</td>
+<td><input type="text18" name="121" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>贺波</td>
+<td>40</td>
+<td><input type="text19" name="122" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>马银萍</td>
+<td>55</td>
+<td><input type="text20" name="123" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>刘倩</td>
+<td>36</td>
+<td><input type="text21" name="124" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>杨倩</td>
+<td>48</td>
+<td><input type="text22" name="125" value="0" style="width:20%"></td>
+</tr>
+
+<tr>
+<td>卜帅帅</td>
+<td>40</td>
+<td><input type="text23" name="126" value="0" style="width:20%"></td>
+</tr>
+
+<tr><td colspan="6">
+<div style="text-align:center;margin-top:10px;margin-left:40%;margin-bottom: 10px;" id="jifenjiaojiao">
+<button type="submit" class="btn btn-primary">提交</button>
+<button type="reset" class="btn btn-warning">重置</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+</div>
+
+<!-- 班组文化 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>班组文化</p>
+<hr>
+</div>
+<div class="table-axtions">
+<button class="manage banzuwenhua" style="background-color: #1DCCAA;">管理</button>
+<button class="add banzuwenhua" style="background-color: #F4A425;">添加</button>
+</div>
+
+<form class="js-ajax-form banzuwenhuaBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<th>
+</th>
+<th>序号</th>
+<th>标题</th>
+
+<th>班组简介</th>
+<th>发布人</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+<td>1</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+<td>2</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+<td>3</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+<td>4</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+<!-- 班组文化的添加 -->
+<form class="banzuwenhuaBox">
+        <div class="renxinximain banzuwenhuaadd" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<input type="hidden" value="班组文化">
+<input type="hidden" name="_xsrf" value="2|d3e2f611|affbf9d8c3fd4b4a4643567d398dbf67|1541821002">
+<input type="hidden" name="formname" value="bzwh">
+<h4>班组文化添加：</h4>
+<div id="banzuwenhua">
+<p><label>标题: </label><input type="text" name="text5" value="检修车间备品三组班组简介"></p>
+<p><label>班组 logo: </label><input type="file" name="text0" value="上传文件"></p> 
+      <p><label for=""></label> <span style="color:red;font-size:10px;">上传文件大小不能超过500KB</span> </p>
+<p><label>logo 释意: </label><textarea type="text" name="text1" rows="5" cols="45" style="text-indent:2em;">大、小圆组成的圆形边框象征着铁路，代表我们神朔铁路公司，上面镶嵌着的五颗钻石代表五型班组建设，中间扬起的三面风帆代表备品三组以及班组电子、制动、仪表
+的三个工种，下面托举的手形树叶代表机务段和检修车间，整体图案的寓意是备品三组在段、车间的领导和支持下，班组全体人员团结一心、努力拼搏，在公司“一
+体两翼两保障”发展战略指引下，扬帆起航、奋勇争先！</textarea></p>
+<p><label>班组简介: </label><textarea type="text" name="text2" rows="15" cols="45" style="text-indent:2em;">班组成立于2009年，班组现有职工21人，工长1名、副工长1名，女职工15人，平均年龄30岁，高级工以上10人.主要担负着全公司约300台电力机车
+的制动系统配件、电子配件、整流柜、仪表配件等核心部件的检修、试验工作。年维修配件共计5万余件，班组日维修量280余件,个人每天大约维修20余件。
+确保每一个配件保质保量提供给机车，是我们唯一的目标。班组也多次获得公司、段先进班组、先进集体以及 
+“巾帼建功”等荣誉称号。班组员工在集团公司组织的技能大赛中分别获得第一名、第三名的优秀成绩。</textarea></p>
+<p><label>组织机构: </label><input type="file" name="text3"> </p>
+       <p> <label for=""></label>  <span style="color:red;font-size:10px;">上传文件大小不能超过5MB</span></p>
+<p><label>员工风采: </label><input id="fengcai" type="file" name="text4" value=""></p>
+      <p><label for=""></label> <span style="color:red;font-size:10px;">上传文件大小不能超过10MB</span></p>
+<div id="banzudi">
+        <button type="submit" class="btn btn-primary">提交</button>
+        <button type="reset" class="btn btn-warning">重置</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+
+<!-- 安全性作业 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>安全关键性作业</p>
+<hr>
+</div>
+<div class="table-axtions">
+<button class="manage anquan" style="background-color: #1DCCAA;">管理</button>
+<button class="add anquan" style="background-color: #F4A425;">添加</button>
+</div>
+<form class="js-ajax-form anquanBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+<tbody><tr>
+<th>
+</th>
+<th>序号</th>
+<th>关键项目</th>
+
+<th>类别</th>
+<th>描述</th>
+<th>状态</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+<td>1</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+<td>2</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+<td>3</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-warning">待审核</button></td>
+<td>操作</td>
+</tr>
+<tr>
+<td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+<td>4</td>
+<td>00</td>
+<td>00</td>
+<td>00</td>
+<td><button type="button" class="btn btn-success">已审核</button></td>
+<td>操作</td>
+</tr>
+</tbody></table>
+</div>
+</form>
+<!-- 安全作业的添加 -->
+<form class="anquanBox" style="display:none">
+<div class="renxinximain anquanzuoyetianjia" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table class="table table-hover table-striped table-bordered">
+    <input type="hidden" name="" value="2|9acdb3d7|94ffd5e2f7dc98d31b8a99d0b28a7681|1541770942">
+    <input type="hidden" name="" value="zgjf">
+    <tbody>
+    <tr>
+    <td colspan="4">安全关键作业</td>
+    </tr>
+    <tr>
+    <td colspan="2" class="dtt">关键项目</td>
+    <td colspan="2" class="ddt">卡控措施</td>
+    </tr>
+    <tr>
+    <td colspan="2" class="dtt">名称</td>
+    <td colspan="2" class="ddt"><input type="text" name="text1" placeholder="名称"></td>
+    </tr>
+    <tr>
+    <td colspan="2" class="dtt">简单描述</td>
+    <td colspan="2" class="ddt"><textarea name="text2" placeholder="简单描述" cols="30" rows="6"></textarea></td>
+    </tr>
+    <tr>
+    <td colspan="2" class="dtt">文件上传</td>
+    <td colspan="2" class="ddt"><input name="text3" type="file" class="anquanaddfile" value="选择文件"></td>
+    </tr>
+    <tr>
+    <td colspan="2" class="dtt">文件类型</td>
+    <td colspan="2" class="ddt">
+    <input name="text4" type="radio" value="图片">图片
+    
+    <input name="text4" type="radio" value="视频">视频
+    
+    <input name="text4" type="radio" value="文档">文档
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    <div style="text-align:center;margin-bottom: 10px;background: rgb(245,245,245)">
+            
+            <button type="submit" class="btn btn-success">添加</button>
+    </div>
+</div>
+</form>
+</div>
+
+<!-- 6S&&TPM -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>6S&amp;&amp;TPM</p>
+<hr>
+</div>
+<div class="table-axtions">
+<button class="manage tpm6s" style="background-color: #1DCCAA;">管理</button>
+<button class="add tpm6s" style="background-color: #F4A425;">添加</button>
+</div>
+<form class="js-ajax-form tpm6sBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table id="ssstpm" class="table table-hover table-striped table-bordered">
+    <tbody><tr id="thead">
+<th></th>
+    <th>序号</th>
+    <th>部/车间</th>
+    <th>检查时间</th>
+    <th>检查人职务 </th>
+    <th>检查人姓名</th>
+    <th>检查地点</th>
+    <th>概况 </th>
+    <th>责任人</th>
+    <th>处理情况</th>
+    <th>类型</th>
+    <th>整改时间</th>
+    <th>种类</th>
+    <th>状态</th>
+    <th>操作</th>
+    </tr>
+    <tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1.1.1</td>
+    <td>6S</td>
+    <td><button type="button" class="btn btn-warning">待审核</button></td>
+    <td><div class="1">
+            <button type="button" class="btn btn-primary">修改</button>
+            <button type="button" class="btn btn-danger">删除</button></div>
+    </td>
+    </tr>
+    <tr>
+<td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+    <td>2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1.1.1</td>
+    <td>TPM</td>
+    <td><button type="button" class="btn btn-warning">待审核</button></td>
+    <td><div class="2">
+            <button type="button" class="btn btn-primary">修改</button>
+            <button type="button" class="btn btn-danger">删除</button></div>
+    </td>
+    </tr>
+    <tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+    <td>3</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1.1.1</td>
+    <td>6S</td>
+    <td><button type="button" class="btn btn-success">已审核</button></td> 
+    <td><div class="3">
+            <button type="button" class="btn btn-primary">修改</button>
+            <button type="button" class="btn btn-danger">删除</button></div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</form>
+<!-- 6s&&tpm的添加 -->
+<form class="tpm6sBox meetingForm" style="display:none" action="http://222.24.63.119/ublack" method="POST" enctype="multipart/form-data">
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<input type="hidden" name="_xsrf" value="2|8ed292fc|f2cb9d359ecd2fa71b73329064bddb8a|1541821002">
+<input type="hidden" name="formname" value="tpm6s">
+<table class="table table-hover table-striped table-bordered">
+<tbody>
+<tr>
+<td colspan="4">安全关键作业</td>
+</tr>
+<tr>
+<td colspan="2" class="dtt"><label>部/车间：</label></td>
+<td colspan="2" class="ddt"><input type="text" name="text1" placeholder="部/车间"></td>
+</tr>
+<tr>
+<td colspan="2" class="dtt"><label>检查时间 ：</label></td>
+<td colspan="2" class="ddt"><input type="text" name="text2" placeholder="检查时间"></td>
+</tr>
+<tr>
+<td colspan="2" class="dtt"><label>检查人职务 ：</label></td>
+<td colspan="2" class="ddt"><input type="text" name="text3" placeholder="检查人职务"></td>
+</tr>
+<tr>
+<td colspan="2" class="dtt"><label>检查人姓名 ：</label></td>
+<td colspan="2" class="ddt"><input type="text" name="text4" placeholder="检查人姓名"></td>
+</tr>
+<tr>
+<td colspan="2" class="dtt"><label>检查地点 ：</label></td>
+<td colspan="2" class="ddt"><input type="text" name="text5" placeholder="检查地点"></td>
+</tr>
+
+<tr>
+<td colspan="2" class="dtt"><label>概况 ：</label></td>
+<td colspan="2" class="ddt"><textarea name="text6" placeholder="概况"></textarea></td>
+</tr>
+
+
+<tr>
+<td colspan="2" class="dtt"><label>责任人：</label></td>
+<td colspan="2" class="ddt"><input type="text" name="text7" placeholder="责任人"></td>
+</tr>
+<tr>
+<td colspan="2" class="dtt"><label>处理情况：</label></td>
+<td colspan="2" class="ddt"><input type="text" name="text8" placeholder="处理情况"></td>
+</tr>
+
+<tr>
+<td colspan="2" class="dtt"><label>类型：</label></td>
+<td colspan="2" class="ddt">
+<select name="text9">
+<option value="1" selected="selected">类型1</option>
+<option value="2">类型2</option>
+<option value="3">类型3</option>
+<option value="4">类型4</option>
+</select>
+</td>
+</tr>
+<tr>
+<td colspan="2" class="dtt"><label>整改时间：</label></td>
+<td colspan="2" class="ddt"><input type="text" name="text10" placeholder="整改时间"></td>
+</tr>
+<tr>
+<td colspan="2" class="dtt"><label>种类：</label></td>
+<td colspan="2" class="ddt"><input type="radio" value="" name="11"><span>6S</span>
+        <input type="radio" value="1" name="11"><span>TPM</span></td>
+</tr>
+</tbody>
+</table>
+<!-- <div id="helihuatianjia">
+<label>部/车间：</label><input type="text" name="text5" placeholder="部/车间"><br>
+<label>检查时间 ：</label><input type="text" name="text5" placeholder="检查时间"><br>
+<label>检查人职务 ：</label><input type="text" name="text5" placeholder="检查人职务"><br>
+<label>检查人姓名 ：</label><input type="text" name="text5" placeholder="检查人姓名"><br>
+<label>检查地点 ：</label><input type="text" name="text5" placeholder="检查地点"><br>
+<label>概况 ：</label><textarea cols="23" rows="5" placeholder="概况"></textarea><br>
+<label>责任人：</label><input type="text" name="text5" placeholder="责任人"><br>
+<label>处理情况：</label><input type="text" name="text5" placeholder="处理情况"><br>
+<label>类型：</label>
+<select>
+<option value="volvo" selected="selected">类型1</option>
+<option value="saab">类型2</option>
+<option value="opel">类型3</option>
+<option value="audi">类型4</option>
+</select><br>
+<label>整改时间：</label><input type="text" name="text5" placeholder="整改时间"><br>
+<label>种类：</label><input type="radio" value="" name="6s"><span>6S</span>
+<input type="radio" value="1" name="tpm"><span>TPM</span>
+</div> -->
+<div style="text-align:center;margin-bottom: 10px;background: rgb(245,245,245)">
+        <button type="submit" class="btn btn-primary">添加</button>
+        
+</div>
+</div>
+</form>
+</div>
+
+<!-- 合理化建议 -->
+<div class="table-box" style="display: none;">
+<div class="table-axtions">
+<p>合理化建议</p>
+<hr>
+</div>
+<div class="table-axtions">
+<button class="manage helihua" style="background-color: #1DCCAA;">管理</button>
+<button class="add helihua" style="background-color: #F4A425;">添加</button>
+</div>
+<form class="js-ajax-form helihuaBox" style="display: block;">
+<div class="table-axtions">
+<button class="submit small-submit">审核</button>
+<button class="submit small-submit">取消审核</button>
+<button class=" submit clear small-clear">删除</button>
+</div>
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<table id="helihuajianyi" class="table table-hover table-striped table-bordered" style="text-align:center;margin-top:-2px;">
+    <tbody><tr id="thead">
+            <th></th>
+    <th>序号</th>
+    <th>类型</th>
+    <th>内容</th>
+    <th>改善方案</th>
+    <th>备注</th>
+    <th>状态</th>
+    <th>操作</th>
+    </tr>
+    <tr>
+<td>
+<label>
+<input type="checkbox" class="1">
+</label>
+</td>
+    <td>1</td>
+    <td>1</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><button type="button" class="btn btn-warning">待审核</button></td>
+    <td><div class="1">
+            <button type="button" class="btn btn-primary">修改</button>
+            <button type="button" class="btn btn-danger">删除</button></div>
+    </td>
+    </tr>
+<tr><td>
+<label>
+<input type="checkbox" class="2">
+</label>
+</td>
+    <td>2</td>
+    <td>2</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><button type="button" class="btn btn-warning">待审核</button></td>
+    <td><div class="2">
+            <button type="button" class="btn btn-primary">修改</button>
+            <button type="button" class="btn btn-danger">删除</button></div>
+    </td>
+    </tr>
+    <tr>
+<td>
+<label>
+<input type="checkbox" class="3">
+</label>
+</td>
+    <td>3</td>
+    <td>1</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><button type="button" class="btn btn-warning">待审核</button></td>
+    <td><div class="3">
+            <button type="button" class="btn btn-primary">修改</button>
+            <button type="button" class="btn btn-danger">删除</button></div>
+    </td>
+    </tr>
+<tr><td>
+<label>
+<input type="checkbox" class="4">
+</label>
+</td>
+    <td>4</td>
+    <td>2</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><button type="button" class="btn btn-success">已审核</button></td>
+    <td><div class="4">
+            <button type="button" class="btn btn-primary">修改</button>
+            <button type="button" class="btn btn-danger">删除</button></div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</form>
+<!-- 合理化建议的添加 -->
+<form class="helihuaBox" style="display:none">
+<div class="renxinximain" style="height:450px;overflow:scroll;overflow-x: hidden;">
+<label for="">类型:</label> <select name="text1">
+<option value="1" selected="selected">类型1</option>
+<option value="2">类型2</option>
+<option value="3">类型3</option>
+<option value="4">类型4</option>
+</select>
+<br>
+<label for="">内容：</label> <input id="txtCon" type="text" placeholder="建议内容" class="input" name="text2">
+<br>
+<label for="">改善方案：</label> <input id="txtCon" type="text" placeholder="改善方案" class="input" name="text3">
+<br>
+<label for="">备注：</label> <input id="txtCon" type="text" placeholder="备注" class="input" name="text4">
+<br>
+<div style="text-align:center;margin-bottom: 10px;background: rgb(245,245,245)">
+<button type="submit" class="btn btn-primary">添加</button>
+</div>
+</div>
+</form>
+</div>
+
+
+        
+<script type="text/javascript">
+var orderHeight = document.documentElement.clientHeight || document.body.scrollHeight ;
+var order = document.getElementById("leftNave");
+order.style.height=orderHeight+"px";
+// var content = document.querySelectorAll(".content");
+// for (var i = content.length - 1; i >= 0; i--) {
+// content[i].style.height=(orderHeight-50)+"px";
+// }
+var tableBox = document.querySelectorAll(".table-box");
+var navBtn = document.querySelectorAll(".Leftnav");
+// 这里是对于其中的左边的导航栏的
+xuanXIangKa(navBtn,tableBox);
+// 这里针对于其中的公告管理的
+var gongGao = document.querySelectorAll(".gongGao");
+var gongGaoBox = document.querySelectorAll(".gongGaoBox");
+xuanXIangKa(gongGao,gongGaoBox);
+//这里是对于其中文件的的
+var file = document.querySelectorAll(".file");
+var fileBox = document.querySelectorAll(".fileBox");
+xuanXIangKa(file,fileBox);
+//这里是针对于其中的新闻的
+var news = document.querySelectorAll(".new");
+var newBox = document.querySelectorAll(".newBox");
+xuanXIangKa(news,newBox);
+//这里是针对于其中的设备管理的
+var shebe = document.querySelectorAll(".shebei");
+var shebebox = document.querySelectorAll(".shebeiBox");
+xuanXIangKa(shebe,shebebox);
+//这里是针对于其中的班前班后会的
+var banaa = document.querySelectorAll(".banqian");
+var banboxaa = document.querySelectorAll(".banqianBox");
+xuanXIangKa(banaa,banboxaa);
+//这里是针对于其中的班组文化的
+var banzu = document.querySelectorAll(".banzuwenhua");
+var banzubox = document.querySelectorAll(".banzuwenhuaBox");
+xuanXIangKa(banzu,banzubox);
+//这里是针对于其中的安全性作业的
+var anquan = document.querySelectorAll(".anquan");
+var anquanbox = document.querySelectorAll(".anquanBox");
+xuanXIangKa(anquan,anquanbox);
+//这里是针对于其中的tpm 6s的
+var tpm6s = document.querySelectorAll(".tpm6s");
+var tpm6sbox = document.querySelectorAll(".tpm6sBox");
+xuanXIangKa(tpm6s,tpm6sbox);
+//这里是针对于其中的合理化建议的
+var helihua = document.querySelectorAll(".helihua");
+var helihuabox = document.querySelectorAll(".helihuaBox");
+xuanXIangKa(helihua,helihuabox);
+// // 对于其中的选项卡的设置
+function xuanXIangKa(obj1,obj2){
+for (var i = 0; i <obj1.length ; i++) {
+obj1[i].index=i;
+
+obj1[i].onclick=function(){
+for (var j = 0; j<obj2.length; j++) {
+obj2[j].style.display="none";
+}
+obj2[this.index].style.display="block";
+}
+
+}
+}
+
+//这里是针对手机端的选项卡的
+var shoujixuan = document.getElementById("secondNav").getElementsByTagName("span");
+var tableBox = document.querySelectorAll(".table-box");
+shoujixuanXIangKa(shoujixuan,tableBox);
+// // 对于其中的手机端选项卡的设置
+function shoujixuanXIangKa(obj1,obj2){
+for (var i = 0; i <obj1.length ; i++) {
+obj1[i].index=i;
+
+obj1[i].onclick=function(){
+for (var j = 0; j<obj2.length; j++) {
+obj2[j].style.display="none";
+obj1[j].className ="";
+}
+obj2[this.index].style.display="block";
+this.className="nav_color";
+}
+
+}
+}
+
+// 针对于其中的菜单管理部分的代码
+let menuBtn = document.querySelectorAll('.menuBtn');
+let menuContent = document.querySelectorAll('.menuContent');
+let menuAd=document.getElementById('menuAd');
+for (let i = 0; i < menuBtn.length; i++) {
+menuBtn[i].onclick = function f() {
+menuBtn[2].style.display="none"
+menuContent[2].style.display="none"
+for (let j = 0; j < menuBtn.length-1; j++) {
+menuBtn[j].className = 'menuBtn';
+menuContent[j].style.display = "none";
+}
+this.className = "active";
+if(i==2)
+this.className="edit"
+menuContent[i].style.display = "block"
+}
+}
+//菜单管理的删除弹出框
+let deleteBtn = document.querySelectorAll('.deleteRow')
+let tbody2 = document.getElementById('tab2');
+let td2 = tbody2.getElementsByTagName('td');
+for (let i = 0; i < deleteBtn.length; i++) {
+deleteBtn[i].onclick = function deleteRow() {
+let con;
+con = confirm("你确定要删除么?"); //在页面上弹出对话框
+if (con == true) {
+tbody2.tBodies[0].removeChild(this.parentNode.parentNode)
+}
+}
+}
+
+//菜单管理的添加菜单后的第三个选项
+let editBtn=document.getElementById('editbtn');
+function edit(){
+editBtn.style.display="block";
+editBtn.className="edit";
+for (let j = 0; j < menuBtn.length-1; j++) {
+menuBtn[j].className = 'menuBtn';
+menuContent[j].style.display = "none";
+}
+menuContent[2].style.display="block"
+}
+
+//添加菜单的返回之前列表的位置
+let goBack=document.querySelectorAll('.goBack');
+for(let i=0;i<goBack.length;i++)
+{
+goBack[i].onclick=function()
+{
+menuBtn[0].className = 'active';
+menuContent[0].style.display="block";
+menuBtn[1].className = 'menuBtn';
+menuContent[1].style.display = "none";
+menuContent[2].style.display = "none";
+menuBtn[2].style.display = 'none';
+}
+}
+//添加菜单的添加触发的事件
+let oBtn=document.getElementById('addBtn');
+var id=tbody2.tBodies[0].rows.length+1;
+var tagName=document.getElementById('tagName')
+var selectText=$("#status").find("option:selected").text();//选中的文本
+oBtn.onclick=function()
+{
+var oTr=document.createElement('tr');
+var oTd=document.createElement('td');
+oTd.innerHTML=id++;
+oTr.appendChild(oTd);
+var oTd=document.createElement('td');
+oTd.innerHTML=tagName.value;
+oTr.appendChild(oTd);
+var oTd=document.createElement('td');
+oTd.innerHTML=selectText;
+oTr.appendChild(oTd);
+var oTd=document.createElement('td');
+oTd.innerHTML=`<button onclick="edit()" style="color: #55C0A2;font-weight:normal">编辑 |</button><button class="deleteRow" style="color: #55C0A2;font-weight:normal">删除</button>`
+oTr.appendChild(oTd);
+oTd.getElementsByTagName('button')[1].onclick=function()
+{
+tbody2.tBodies[0].removeChild(this.parentNode.parentNode);
+}
+tbody2.tBodies[0].appendChild(oTr);
+}
+
+
+function getFile(event,obj) {
+alert(obj);
+var fileObj = document.querySelectorAll(obj)[0].files[0];
+console.log(fileObj);
+return fileObj;
+}
+</script>
+
+</body></html>

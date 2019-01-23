@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>登陆页面</title>
+<link rel="stylesheet" type="text/css" href="login/login.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="jquery.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="post" id="form">
+            <input type="hidden" name="_xsrf" value="2|ccb3257b|4f41bd9a627971d1b4987acdc20c9d8c|1541608790">
+            <img src="login/logo.png">
+        <hr size="1px" color="#CBCBCB">
+        <p>用户名</p>
+            <input type="text" class="text" name="username" id="username" placeholder="用户名">
+        <p>密码</p>
+            <input type="password" class="text" name="password" id="password" placeholder="密码">
+            <span style="margin-left:25%">管理员<input type="radio" name="leibie" value="1"></span> <span>员工<input type="radio" name="leibie" value="0"></span>
+            <input type="button" onclick="login()" value="登陆" class="btn">
+            <span>二维码登陆</span><span style="color:black">|</span><span>账号密码登陆</span><span>|</span><span><a href="../zhuce/zhuce.html">去注册</a></span>
+        </form>
+    </div>
+    <script>
+        function login(){
+            var usename=$("username").val();
+            var password=$("password").val();
+            var radio=document.getElementsByName("radio");
+
+            var selectvalue=null;   //  selectvalue为radio中选中的值
+
+            for(var i=0;i<radio.length;i++){
+
+                if(radio[i].checked==true) {
+
+                        selectvalue=radio[i].value;
+
+                        break;
+
+                }
+
+            }
+            if(usename!=''&&password!=""){
+                $.post("",{usename:usename,password:password,selectvalue:selectvalue},function(result){
+                    if(result==false){
+                        alert("账号密码出错！重新输入");
+                    }
+                    else{
+                        alert("登录成功！");
+                        window.location.href = "";//这里是登陆成功之后要跳转的页面url
+                    }
+                });  
+            }
+            else{
+                alert("账号密码不能为空！！！");
+            }
+        }
+    </script>
+
+
+</body></html>
